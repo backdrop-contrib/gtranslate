@@ -1,0 +1,10 @@
+{
+    "_config_name": "gtranslate.settings",
+    "gtranslate_main_lang": "en",
+    "gtranslate_pro": "0",
+    "gtranslate_enterprise": "0",
+    "gtranslate_method": "onfly",
+    "gtranslate_lang": "dynamic variable in file /gtranslate/gtranslate.module line 200",
+    "gtranslate_look": "flags_dropdown",
+    "gtranslate_flag_size": "16"
+}

@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the gtranslate module.
+ *
+ */
+
+
+/**
+ * Migrate gtranslate variables to config.
+ */
+function gtranslate_update_1000() {
+  $config = config('gtranslate.settings');
+  $config->set('gtranslate_main_lang', update_variable_get('gtranslate_main_lang', 'en'));
+  $config->set('gtranslate_pro', update_variable_get('gtranslate_pro', '0'));
+  $config->set('gtranslate_enterprise', update_variable_get('gtranslate_enterprise', '0'));
+  $config->set('gtranslate_method', update_variable_get('gtranslate_method', 'onfly'));
+  $config->set('gtranslate_lang', update_variable_get('gtranslate_lang', 'dynamic variable in file /gtranslate/gtranslate.module line 200'));
+  $config->set('gtranslate_look', update_variable_get('gtranslate_look', 'flags_dropdown'));
+  $config->set('gtranslate_flag_size', update_variable_get('gtranslate_flag_size', '16'));
+  $config->save();
+
+  update_variable_del('gtranslate_main_lang');
+  update_variable_del('gtranslate_pro');
+  update_variable_del('gtranslate_enterprise');
+  update_variable_del('gtranslate_method');
+  update_variable_del('gtranslate_lang');
+  update_variable_del('gtranslate_look');
+  update_variable_del('gtranslate_flag_size');
+}
+
+/**
+ * Implements hook_install().
+ */
+function gtranslate_install() {
+  // Dynamically generated variable data was detected.
+  // /gtranslate/gtranslate.module line 200
+}
